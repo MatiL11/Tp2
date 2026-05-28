@@ -1,7 +1,3 @@
-/* =========================================
-   BASE STYLES - Tipografía, colores, reset
-   ========================================= */
-
 :root {
   --color-primario: #1a2744;
   --color-acento: #c0392b;
@@ -75,7 +71,6 @@ ul, ol {
   list-style: none;
 }
 
-/* Clase utilitaria para el separador de sección */
 .seccion-etiqueta {
   display: inline-block;
   background-color: var(--color-acento);
