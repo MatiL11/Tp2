@@ -1,0 +1,253 @@
+/* =========================================
+   LAYOUT - Estructura Flexbox Mobile First
+   ========================================= */
+
+/* --- Contenedor global --- */
+.contenedor {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+.site-header {
+  background-color: var(--color-primario);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===========================
+   NAVEGACIÓN
+   =========================== */
+.nav-principal {
+  background-color: var(--color-primario);
+}
+
+/* Ícono hamburguesa - visible solo en mobile */
+.hamburguesa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburguesa span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* Links del menú - ocultos en mobile */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  padding: 0;
+}
+
+.nav-links li a {
+  display: block;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: background-color var(--transicion);
+}
+
+.nav-links li a:hover {
+  background-color: var(--color-acento);
+  text-decoration: none;
+}
+
+/* ===========================
+   BAND DE FECHA / INFO
+   =========================== */
+.banda-info {
+  background-color: #ffffff;
+  border-bottom: 3px solid var(--color-acento);
+}
+
+.banda-info .contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 12px;
+}
+
+/* ===========================
+   LAYOUT PRINCIPAL
+   =========================== */
+.pagina-principal {
+  padding: 16px 0;
+}
+
+/* Mobile: todo en columna */
+.grid-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Zona de noticias destacadas --- */
+.zona-destacadas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Noticia principal (hero) */
+.noticia-hero {
+  background-color: var(--color-fondo-card);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-card);
+  overflow: hidden;
+}
+
+/* Grid de noticias secundarias importantes */
+.grid-secundarias {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Columna lateral --- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===========================
+   TABLET: min-width 600px
+   =========================== */
+@media (min-width: 600px) {
+  .contenedor {
+    padding: 0 20px;
+  }
+
+  .banda-info .contenedor {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid-secundarias {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .grid-secundarias .noticia-card {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+  }
+}
+
+/* ===========================
+   ESCRITORIO PEQUEÑO: min-width 900px
+   =========================== */
+@media (min-width: 900px) {
+  .contenedor {
+    padding: 0 24px;
+  }
+
+  /* Menú horizontal */
+  .hamburguesa {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .nav-links li a {
+    padding: 12px 14px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.78rem;
+  }
+
+  .nav-links li:last-child a {
+    border-right: none;
+  }
+
+  /* Layout de dos columnas */
+  .grid-principal {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .zona-destacadas {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .sidebar {
+    flex: 0 0 300px;
+    width: 300px;
+  }
+
+  .grid-secundarias {
+    flex-direction: row;
+  }
+
+  .grid-secundarias .noticia-card {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+/* ===========================
+   ESCRITORIO GRANDE: min-width 1100px
+   =========================== */
+@media (min-width: 1100px) {
+  .sidebar {
+    flex: 0 0 340px;
+    width: 340px;
+  }
+
+  .grid-secundarias .noticia-card {
+    flex: 1 1 calc(33.333% - 11px);
+  }
+}
+
+/* ===========================
+   TV / PANTALLA MUY GRANDE: min-width 1400px
+   =========================== */
+@media (min-width: 1400px) {
+  .contenedor {
+    padding: 0 32px;
+  }
+
+  html {
+    font-size: 18px;
+  }
+}

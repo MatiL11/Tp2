@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Cronista Sur - Portal de noticias. Las últimas noticias de política, economía, deportes, cultura y tecnología." />
+  <title>El Cronista Sur - Noticias de hoy</title>
+
+  <!-- CSS: normalize → base → layout → components -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- =============================
+       HEADER: Logo + Hamburguesa
+       ============================= -->
+  <header class="site-header" role="banner">
+
+    <div class="header-top">
+      <!-- Logo -->
+      <a href="index.html" class="logo-diario" aria-label="El Cronista Sur - Inicio">
+        <span class="logo-nombre">El <span>Cronista</span> Sur</span>
+        <span class="logo-slogan">Periodismo independiente desde 1998</span>
+      </a>
+
+      <div class="header-meta">
+        <!-- Buscador (solo visible en tablets y desktop) -->
+        <form class="buscador" role="search" aria-label="Buscar noticias">
+          <input type="search" placeholder="Buscar…" aria-label="Término de búsqueda" />
+          <button type="submit" aria-label="Enviar búsqueda">&#128269;</button>
+        </form>
+
+        <!-- Ícono hamburguesa (solo mobile) -->
+        <button class="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div><!-- /.header-top -->
+
+    <!-- NAV Principal -->
+    <nav class="nav-principal" role="navigation" aria-label="Menú principal">
+      <div class="contenedor">
+        <ul class="nav-links" id="menu-principal">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Política</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Cultura</a></li>
+          <li><a href="#">Tecnología</a></li>
+          <li><a href="#">Internacional</a></li>
+          <li><a href="#">Sociedad</a></li>
+          <li><a href="#">Opinión</a></li>
+          <li><a href="#">Policiales</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header><!-- /.site-header -->
+
+
+  <!-- =============================
+       BANDA DE FECHA E INFO
+       ============================= -->
+  <div class="banda-info" role="complementary" aria-label="Información de edición">
+    <div class="contenedor">
+      <span class="fecha-actual">Miércoles, 28 de mayo de 2026 &nbsp;|&nbsp; Edición digital</span>
+      <span class="clima-widget" aria-label="Clima: Buenos Aires 19°C nublado">&#127745; Buenos Aires &nbsp; 19°C &nbsp; &#9729;</span>
+    </div>
+  </div>
+
+
+  <!-- =============================
+       BREAKING NEWS TICKER
+       ============================= -->
+  <div class="breaking-news" role="alert" aria-live="polite" aria-label="Última hora">
+    <span class="breaking-label">&#128308; Última hora</span>
+    <div class="breaking-content">
+      <a href="#">El Congreso aprobó el nuevo presupuesto nacional para el período 2026-2027 con 135 votos a favor</a>
+    </div>
+  </div>
+
+
+  <!-- =============================
+       CONTENIDO PRINCIPAL
+       ============================= -->
+  <main class="pagina-principal" role="main">
+    <div class="contenedor">
+
+      <!-- Publicidad banner superior -->
+      <div class="publicidad publicidad-banner" style="margin-bottom: 18px;" role="complementary" aria-label="Espacio publicitario">
+        <a href="#">
+          <p class="pub-titulo">UNIVERSIDAD AUSTRAL</p>
+          <p class="pub-subtitulo">Inscripciones abiertas — Maestrías y Posgrados 2026</p>
+          <span class="pub-cta">Inscribirse ahora</span>
+        </a>
+      </div>
+
+      <!-- Grid principal: destacadas + sidebar -->
+      <div class="grid-principal">
+
+        <!-- ===== COLUMNA DE NOTICIAS DESTACADAS ===== -->
+        <section class="zona-destacadas" aria-label="Noticias destacadas">
+
+          <!-- ---- NOTICIA HERO ---- -->
+          <article class="noticia-hero" aria-label="Noticia principal">
+            <div class="imagen-wrapper">
+              <img
+                src="https://picsum.photos/seed/summit/900/506"
+                alt="Líderes mundiales reunidos en la cumbre climática de Ginebra"
+                loading="eager"
+              />
+            </div>
+            <div class="contenido">
+              <span class="seccion-etiqueta">Internacional</span>
+              <h1 class="titulo-noticia">
+                <a href="#">Cumbre de Ginebra: 50 países acuerdan reducir emisiones un 45 % para 2035 en un histórico tratado climático</a>
+              </h1>
+              <p class="resumen">
+                Tras cinco días de negociaciones, los líderes firmaron el Pacto de Ginebra, considerado el acuerdo medioambiental más ambicioso desde París 2015. El texto incluye mecanismos de financiación para países en desarrollo y sanciones comerciales a quienes incumplan las metas acordadas.
+              </p>
+              <div class="meta-noticia">
+                <span class="meta-autor">Por Sofía Ramos</span>
+                <span class="meta-separador">|</span>
+                <time datetime="2026-05-28T09:30">Hoy, 09:30 hs</time>
+                <span class="meta-separador">|</span>
+                <span>&#128065; 18.340 lecturas</span>
+              </div>
+              <a href="#" class="leer-mas">Leer nota completa &#8594;</a>
+            </div>
+          </article><!-- /.noticia-hero -->
+
+
+          <!-- ---- SECCIÓN: Más noticias importantes ---- -->
+          <div class="titulo-seccion">
+            <h2>Noticias del día</h2>
+          </div>
+
+          <!-- Grid de 2-3 noticias secundarias con imagen -->
+          <div class="grid-secundarias" role="list" aria-label="Noticias secundarias">
+
+            <!-- Card 1 -->
+            <article class="noticia-card" role="listitem">
+              <div class="imagen-wrapper">
+                <img
+                  src="https://picsum.photos/seed/economy/600/360"
+                  alt="Gráfico de la bolsa con tendencia ascendente"
+                  loading="lazy"
+                />
+              </div>
+              <div class="contenido">
+                <span class="seccion-etiqueta">Economía</span>
+                <h2 class="titulo-noticia">
+                  <a href="#">El Banco Central subió la tasa de referencia a 42 % ante la presión inflacionaria de abril</a>
+                </h2>
+                <p class="resumen">La decisión busca contener el avance del índice de precios que marcó 6,2 % mensual.</p>
+                <div class="meta-noticia">
+                  <time datetime="2026-05-28T08:15">08:15 hs</time>
+                </div>
+                <a href="#" class="leer-mas">Leer más &#8594;</a>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="noticia-card" role="listitem">
+              <div class="imagen-wrapper">
+                <img
+                  src="https://picsum.photos/seed/football2026/600/360"
+                  alt="Jugadores de la selección nacional celebrando un gol"
+                  loading="lazy"
+                />
+              </div>
+              <div class="contenido">
+                <span class="seccion-etiqueta">Deportes</span>
+                <h2 class="titulo-noticia">
+                  <a href="#">La Selección derrotó 2-1 a Brasil y se clasificó para la final de la Copa América</a>
+                </h2>
+                <p class="resumen">Goles de Fernández y Acosta en el segundo tiempo sellaron el boleto a la gran final del domingo.</p>
+                <div class="meta-noticia">
+                  <time datetime="2026-05-28T07:45">07:45 hs</time>
+                </div>
+                <a href="#" class="leer-mas">Leer más &#8594;</a>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="noticia-card" role="listitem">
+              <div class="imagen-wrapper">
+                <img
+                  src="https://picsum.photos/seed/tech2026/600/360"
+                  alt="Laboratorio de inteligencia artificial con pantallas y equipos"
+                  loading="lazy"
+                />
+              </div>
+              <div class="contenido">
+                <span class="seccion-etiqueta">Tecnología</span>
+                <h2 class="titulo-noticia">
+                  <a href="#">Una startup local lanza una IA que detecta enfermedades cardíacas con 97 % de precisión</a>
+                </h2>
+                <p class="resumen">La empresa mendocina MedCore desarrolló el sistema en colaboración con el Hospital Garrahan y ya tiene pedidos de 12 países.</p>
+                <div class="meta-noticia">
+                  <time datetime="2026-05-28T10:00">10:00 hs</time>
+                </div>
+                <a href="#" class="leer-mas">Leer más &#8594;</a>
+              </div>
+            </article>
+
+          </div><!-- /.grid-secundarias -->
+
+
+          <!-- ---- Publicidad interna ---- -->
+          <div class="publicidad" role="complementary" aria-label="Espacio publicitario">
+            <a href="#">
+              <p class="pub-titulo">BANCO NACIÓN</p>
+              <p class="pub-subtitulo">Préstamos personales hasta $10.000.000 — Tasa fija</p>
+              <span class="pub-cta">Simular cuota</span>
+            </a>
+          </div>
+
+
+          <!-- ---- SECCIÓN: Política ---- -->
+          <section aria-labelledby="titulo-politica">
+            <div class="titulo-seccion">
+              <h2 id="titulo-politica">Política</h2>
+            </div>
+
+            <!-- Noticia horizontal (imagen + texto) -->
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+
+              <article class="noticia-horizontal">
+                <div class="imagen-wrapper">
+                  <img
+                    src="https://picsum.photos/seed/politics1/400/240"
+                    alt="Presidente firmando decreto en Casa Rosada"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="contenido">
+                  <span class="seccion-etiqueta">Política</span>
+                  <h3 class="titulo-noticia">
+                    <a href="#">El Ejecutivo firmó el decreto de reforma del sistema previsional que beneficia a 4 millones de jubilados</a>
+                  </h3>
+                  <div class="meta-noticia">
+                    <time datetime="2026-05-27T18:20">Ayer, 18:20 hs</time>
+                  </div>
+                  <a href="#" class="leer-mas">Leer más &#8594;</a>
+                </div>
+              </article>
+
+              <article class="noticia-horizontal">
+                <div class="imagen-wrapper">
+                  <img
+                    src="https://picsum.photos/seed/politics2/400/240"
+                    alt="Senadores debatiendo en el recinto"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="contenido">
+                  <span class="seccion-etiqueta">Política</span>
+                  <h3 class="titulo-noticia">
+                    <a href="#">El Senado debate hoy la nueva ley de reforma electoral: principales puntos del proyecto</a>
+                  </h3>
+                  <div class="meta-noticia">
+                    <time datetime="2026-05-28T11:00">Hoy, 11:00 hs</time>
+                  </div>
+                  <a href="#" class="leer-mas">Leer más &#8594;</a>
+                </div>
+              </article>
+
+              <article class="noticia-horizontal">
+                <div class="imagen-wrapper">
+                  <img
+                    src="https://picsum.photos/seed/politics3/400/240"
+                    alt="Candidatos en conferencia de prensa"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="contenido">
+                  <span class="seccion-etiqueta">Política</span>
+                  <h3 class="titulo-noticia">
+                    <a href="#">Las encuestas ubican al oficialismo con 38 % de intención de voto a seis meses de las elecciones</a>
+                  </h3>
+                  <div class="meta-noticia">
+                    <time datetime="2026-05-28T06:00">Hoy, 06:00 hs</time>
+                  </div>
+                  <a href="#" class="leer-mas">Leer más &#8594;</a>
+                </div>
+              </article>
+
+            </div>
+          </section><!-- /Política -->
+
+
+          <!-- ---- SECCIÓN: Noticias breves (solo título + link) ---- -->
+          <section aria-labelledby="titulo-breves">
+            <div class="titulo-seccion">
+              <h2 id="titulo-breves">En breve</h2>
+            </div>
+
+            <div class="lista-noticias-breves" role="list">
+              <div class="noticia-breve" role="listitem">
+                <a href="#">Paro docente en tres provincias afecta a más de 500.000 alumnos del nivel primario</a>
+              </div>
+              <div class="noticia-breve" role="listitem">
+                <a href="#">La Justicia ordenó investigar irregularidades en contratos municipales por $ 2.300 millones</a>
+              </div>
+              <div class="noticia-breve" role="listitem">
+                <a href="#">Incendios forestales en la Patagonia: ya se consumieron más de 40.000 hectáreas</a>
+              </div>
+              <div class="noticia-breve" role="listitem">
+                <a href="#">River y Boca definen el Superclásico del fin de semana con localía alternada</a>
+              </div>
+              <div class="noticia-breve" role="listitem">
+                <a href="#">El INDEC publicará mañana los datos de desempleo del primer trimestre 2026</a>
+              </div>
+              <div class="noticia-breve" role="listitem">
+                <a href="#">Nuevas restricciones al tránsito en el centro porteño por obras del metrobús</a>
+              </div>
+              <div class="noticia-breve" role="listitem">
+                <a href="#">Científicos argentinos descubren una nueva especie de dinosaurio en Neuquén</a>
+              </div>
+              <div class="noticia-breve" role="listitem">
+                <a href="#">El tipo de cambio oficial cerró en $1.427 con caída de 0,3 % respecto al martes</a>
+              </div>
+            </div>
+          </section><!-- /En breve -->
+
+
+          <!-- ---- SECCIÓN: Cultura ---- -->
+          <section aria-labelledby="titulo-cultura">
+            <div class="titulo-seccion">
+              <h2 id="titulo-cultura">Cultura</h2>
+            </div>
+            <div class="grid-secundarias" role="list">
+
+              <article class="noticia-card" role="listitem">
+                <div class="imagen-wrapper">
+                  <img
+                    src="https://picsum.photos/seed/cultura1/600/360"
+                    alt="Fachada del Teatro Colón iluminada de noche"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="contenido">
+                  <span class="seccion-etiqueta">Cultura</span>
+                  <h3 class="titulo-noticia">
+                    <a href="#">El Teatro Colón inaugura su temporada lírica con una aclamada versión de «Aida» de Verdi</a>
+                  </h3>
+                  <p class="resumen">Más de 2.500 espectadores ovacionaron al elenco en la noche inaugural.</p>
+                  <a href="#" class="leer-mas">Leer más &#8594;</a>
+                </div>
+              </article>
+
+              <article class="noticia-card" role="listitem">
+                <div class="imagen-wrapper">
+                  <img
+                    src="https://picsum.photos/seed/libros2026/600/360"
+                    alt="Autora firmando ejemplares en la Feria del Libro"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="contenido">
+                  <span class="seccion-etiqueta">Cultura</span>
+                  <h3 class="titulo-noticia">
+                    <a href="#">La Feria Internacional del Libro de Buenos Aires bate récord con 1,2 millones de visitantes</a>
+                  </h3>
+                  <p class="resumen">La edición 2026 superó todas las expectativas con más de 1.500 expositores de 48 países.</p>
+                  <a href="#" class="leer-mas">Leer más &#8594;</a>
+                </div>
+              </article>
+
+            </div>
+          </section><!-- /Cultura -->
+
+        </section><!-- /.zona-destacadas -->
+
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" aria-label="Barra lateral">
+
+          <!-- Widget: Lo más leído -->
+          <div class="widget" aria-labelledby="widget-tendencias">
+            <div class="widget-header" id="widget-tendencias">&#128200; Lo más leído hoy</div>
+            <div class="widget-body">
+              <div class="tendencia-item">
+                <span class="tendencia-num">1</span>
+                <a href="#">Cumbre de Ginebra: el texto completo del acuerdo climático</a>
+              </div>
+              <div class="tendencia-item">
+                <span class="tendencia-num">2</span>
+                <a href="#">Goles y análisis del partido Argentina-Brasil</a>
+              </div>
+              <div class="tendencia-item">
+                <span class="tendencia-num">3</span>
+                <a href="#">Cómo impacta la suba del Banco Central en tu crédito hipotecario</a>
+              </div>
+              <div class="tendencia-item">
+                <span class="tendencia-num">4</span>
+                <a href="#">La startup mendocina que revoluciona la cardiología</a>
+              </div>
+              <div class="tendencia-item">
+                <span class="tendencia-num">5</span>
+                <a href="#">Reforma previsional: cuánto cobrarán los jubilados desde julio</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publicidad sidebar -->
+          <div class="publicidad" role="complementary" aria-label="Espacio publicitario">
+            <a href="#">
+              <p class="pub-titulo">SAMSUNG</p>
+              <p class="pub-subtitulo">Galaxy S26 — Disponible desde hoy</p>
+              <span class="pub-cta">Ver ofertas</span>
+            </a>
+          </div>
+
+          <!-- Widget: Opinión / Editorial -->
+          <div class="widget" aria-labelledby="widget-opinion">
+            <div class="widget-header" id="widget-opinion">&#128221; Opinión</div>
+            <div class="widget-body">
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+
+                <article>
+                  <span class="seccion-etiqueta">Editorial</span>
+                  <h4 style="margin: 6px 0 4px; font-size: 0.9rem;">
+                    <a href="#">El acuerdo climático es un paso real, pero la implementación será el verdadero desafío</a>
+                  </h4>
+                  <p style="font-size: 0.78rem; color: var(--color-texto-suave); margin: 0 0 4px;">Por la Redacción</p>
+                  <a href="#" class="leer-mas">Leer &#8594;</a>
+                </article>
+
+                <hr class="divisor" />
+
+                <article>
+                  <span class="seccion-etiqueta">Columna</span>
+                  <h4 style="margin: 6px 0 4px; font-size: 0.9rem;">
+                    <a href="#">La suba de tasas: ¿medicina o veneno para la economía real?</a>
+                  </h4>
+                  <p style="font-size: 0.78rem; color: var(--color-texto-suave); margin: 0 0 4px;">Por Dr. Marcos Ibáñez</p>
+                  <a href="#" class="leer-mas">Leer &#8594;</a>
+                </article>
+
+                <hr class="divisor" />
+
+                <article>
+                  <span class="seccion-etiqueta">Columna</span>
+                  <h4 style="margin: 6px 0 4px; font-size: 0.9rem;">
+                    <a href="#">Inteligencia artificial en medicina: oportunidad histórica con riesgos éticos que no podemos ignorar</a>
+                  </h4>
+                  <p style="font-size: 0.78rem; color: var(--color-texto-suave); margin: 0 0 4px;">Por Dra. Laura Vidal</p>
+                  <a href="#" class="leer-mas">Leer &#8594;</a>
+                </article>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Publicidad sidebar 2 -->
+          <div class="publicidad" role="complementary" aria-label="Espacio publicitario">
+            <a href="#">
+              <p class="pub-titulo">MOVISTAR FIBRA</p>
+              <p class="pub-subtitulo">Internet 1 Gbps desde $8.999/mes</p>
+              <span class="pub-cta">Contratar</span>
+            </a>
+          </div>
+
+          <!-- Widget: Internacional breves -->
+          <div class="widget" aria-labelledby="widget-inter">
+            <div class="widget-header" id="widget-inter">&#127758; Internacional</div>
+            <div class="widget-body">
+              <div class="lista-noticias-breves" style="box-shadow: none; border-radius: 0;">
+                <div class="noticia-breve">
+                  <a href="#">EE.UU. anuncia nuevo paquete de sanciones a Corea del Norte por pruebas balísticas</a>
+                </div>
+                <div class="noticia-breve">
+                  <a href="#">La UE aprueba fondo de 200.000 millones de euros para transición energética</a>
+                </div>
+                <div class="noticia-breve">
+                  <a href="#">China registra el mayor crecimiento económico trimestral en 4 años: 6,8 %</a>
+                </div>
+                <div class="noticia-breve">
+                  <a href="#">Terremoto de magnitud 6,4 sacude la costa de Japón sin víctimas confirmadas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publicidad sidebar 3 -->
+          <div class="publicidad" role="complementary" aria-label="Espacio publicitario">
+            <a href="#">
+              <p class="pub-titulo">DESPEGAR</p>
+              <p class="pub-subtitulo">Vuelos a Europa desde USD 680 — Temporada invierno</p>
+              <span class="pub-cta">Ver vuelos</span>
+            </a>
+          </div>
+
+        </aside><!-- /.sidebar -->
+
+      </div><!-- /.grid-principal -->
+
+    </div><!-- /.contenedor -->
+  </main><!-- /main -->
+
+
+  <!-- =============================
+       FOOTER
+       ============================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="contenedor">
+
+      <div class="footer-grid">
+        <div class="footer-columna">
+          <h4>El Cronista Sur</h4>
+          <p>Portal de noticias independiente fundado en 1998. Comprometido con el periodismo de calidad, la veracidad de la información y el ejercicio de la libertad de prensa.</p>
+        </div>
+        <div class="footer-columna">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#">Política</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Tecnología</a></li>
+            <li><a href="#">Internacional</a></li>
+          </ul>
+        </div>
+        <div class="footer-columna">
+          <h4>El diario</h4>
+          <ul>
+            <li><a href="#">Quiénes somos</a></li>
+            <li><a href="#">Equipo editorial</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Publicitar en El Cronista Sur</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-columna">
+          <h4>Seguinos</h4>
+          <ul>
+            <li><a href="#">&#127758; Sitio web principal</a></li>
+            <li><a href="#">🐦 Twitter / X</a></li>
+            <li><a href="#">📘 Facebook</a></li>
+            <li><a href="#">📸 Instagram</a></li>
+            <li><a href="#">▶ YouTube</a></li>
+            <li><a href="#">📱 Descargar app</a></li>
+          </ul>
+        </div>
+      </div><!-- /.footer-grid -->
+
+      <hr class="divisor" style="border-color: rgba(255,255,255,0.1);" />
+
+      <div class="footer-bottom">
+        <p>© 2026 El Cronista Sur. Todos los derechos reservados.</p>
+        <p>Hecho con FlexBox &amp; Mobile First &mdash; Actividad Facultad</p>
+      </div>
+
+    </div>
+  </footer><!-- /.site-footer -->
+
+</body>
+</html>

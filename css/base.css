@@ -1,0 +1,119 @@
+/* =========================================
+   BASE STYLES - Tipografía, colores, reset
+   ========================================= */
+
+:root {
+  --color-primario: #1a2744;
+  --color-acento: #c0392b;
+  --color-acento-hover: #962d22;
+  --color-texto: #222222;
+  --color-texto-suave: #555555;
+  --color-borde: #dddddd;
+  --color-fondo: #f5f5f0;
+  --color-fondo-card: #ffffff;
+  --color-publicidad: #f0ede5;
+  --color-publicidad-borde: #c8b99a;
+  --fuente-titular: 'Georgia', 'Times New Roman', serif;
+  --fuente-cuerpo: 'Arial', 'Helvetica Neue', sans-serif;
+  --sombra-card: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --radio-borde: 3px;
+  --transicion: 0.2s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titular);
+  line-height: 1.25;
+  margin: 0 0 0.5em 0;
+  color: var(--color-texto);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.05rem; }
+
+p {
+  margin: 0 0 1em 0;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+a:hover {
+  color: var(--color-acento);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Clase utilitaria para el separador de sección */
+.seccion-etiqueta {
+  display: inline-block;
+  background-color: var(--color-acento);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.leer-mas {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 6px;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transicion);
+}
+
+.leer-mas:hover {
+  border-color: var(--color-acento);
+  text-decoration: none;
+}
+
+.divisor {
+  border: none;
+  border-top: 1px solid var(--color-borde);
+  margin: 0;
+}
+
+.divisor-grueso {
+  border: none;
+  border-top: 3px solid var(--color-primario);
+  margin: 0;
+}
