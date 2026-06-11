@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suscribirse - El Cronista Sur</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo-diario">
+        <span class="logo-nombre">El <span>Cronista</span> Sur</span>
+        <span class="logo-slogan">Periodismo independiente desde 1998</span>
+      </a>
+      <div class="header-meta">
+        <button class="hamburguesa">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-principal">
+      <div class="contenedor">
+        <ul class="nav-links" id="menu-principal">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Política</a></li>
+          <li><a href="#">Economía</a></li>
+          <li><a href="#">Deportes</a></li>
+          <li><a href="#">Cultura</a></li>
+          <li><a href="#">Tecnología</a></li>
+          <li><a href="#">Internacional</a></li>
+          <li><a href="#">Sociedad</a></li>
+          <li><a href="#">Opinión</a></li>
+          <li><a href="#">Policiales</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="banda-info">
+    <div class="contenedor">
+      <span class="fecha-actual">Miércoles, 28 de mayo de 2026 &nbsp;|&nbsp; Edición digital</span>
+      <span class="clima-widget">&#127745; Buenos Aires &nbsp; 19°C &nbsp; &#9729;</span>
+    </div>
+  </div>
+
+  <main class="pagina-suscripcion">
+    <div class="contenedor">
+
+      <h1 class="titulo-saludo" id="titulo-saludo">HOLA</h1>
+
+      <div class="formulario-suscripcion">
+        <form id="form-suscripcion" novalidate>
+          <div class="form-grid">
+
+            <div class="campo">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Ej: Juan Pérez" />
+              <span class="error-msg" id="error-nombre"></span>
+            </div>
+
+            <div class="campo">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Ej: juan@email.com" />
+              <span class="error-msg" id="error-email"></span>
+            </div>
+
+            <div class="campo">
+              <label for="contrasena">Contraseña</label>
+              <input type="password" id="contrasena" placeholder="Mínimo 8 caracteres" />
+              <span class="error-msg" id="error-contrasena"></span>
+            </div>
+
+            <div class="campo">
+              <label for="repetir">Repetir contraseña</label>
+              <input type="password" id="repetir" placeholder="Repetí la contraseña" />
+              <span class="error-msg" id="error-repetir"></span>
+            </div>
+
+            <div class="campo">
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" placeholder="Ej: 25" />
+              <span class="error-msg" id="error-edad"></span>
+            </div>
+
+            <div class="campo">
+              <label for="telefono">Teléfono</label>
+              <input type="text" id="telefono" placeholder="Ej: 1145678901" />
+              <span class="error-msg" id="error-telefono"></span>
+            </div>
+
+            <div class="campo">
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" placeholder="Ej: Av. Corrientes 1234" />
+              <span class="error-msg" id="error-direccion"></span>
+            </div>
+
+            <div class="campo">
+              <label for="ciudad">Ciudad</label>
+              <input type="text" id="ciudad" placeholder="Ej: Buenos Aires" />
+              <span class="error-msg" id="error-ciudad"></span>
+            </div>
+
+            <div class="campo">
+              <label for="codigoPostal">Código postal</label>
+              <input type="text" id="codigoPostal" placeholder="Ej: 1414" />
+              <span class="error-msg" id="error-codigoPostal"></span>
+            </div>
+
+            <div class="campo">
+              <label for="dni">DNI</label>
+              <input type="text" id="dni" placeholder="Ej: 38456789" />
+              <span class="error-msg" id="error-dni"></span>
+            </div>
+
+            <div class="campo-boton">
+              <button type="submit" class="btn-enviar">Enviar</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <div id="modal-contenido"></div>
+      <button class="modal-cerrar" id="modal-cerrar">Cerrar</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="contenedor">
+
+      <div class="footer-grid">
+        <div class="footer-columna">
+          <h4>El Cronista Sur</h4>
+          <p>Portal de noticias independiente fundado en 1998. Comprometido con el periodismo de calidad, la veracidad de la información y el ejercicio de la libertad de prensa.</p>
+        </div>
+        <div class="footer-columna">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#">Política</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Tecnología</a></li>
+            <li><a href="#">Internacional</a></li>
+          </ul>
+        </div>
+        <div class="footer-columna">
+          <h4>El diario</h4>
+          <ul>
+            <li><a href="#">Quiénes somos</a></li>
+            <li><a href="#">Equipo editorial</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Publicitar en El Cronista Sur</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-columna">
+          <h4>Seguinos</h4>
+          <ul>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divisor" style="border-color: rgba(255,255,255,0.1);" />
+
+      <div class="footer-bottom">
+        <p>© 2026 El Cronista Sur. Todos los derechos reservados.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/subscription.js"></script>
+
+</body>
+</html>
