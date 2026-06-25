@@ -115,10 +115,8 @@ document.getElementById("form-suscripcion").addEventListener("submit", function(
     if (error) errores.push(error);
   });
 
-  var modalContenido = document.getElementById("modal-contenido");
-  modalContenido.innerHTML = "";
-
   if (errores.length > 0) {
+    var modalContenido = document.getElementById("modal-contenido");
     modalContenido.innerHTML = "<h3>Hay errores en el formulario:</h3>";
     errores.forEach(function(err) {
       var p = document.createElement("p");
@@ -126,34 +124,85 @@ document.getElementById("form-suscripcion").addEventListener("submit", function(
       p.textContent = "• " + err;
       modalContenido.appendChild(p);
     });
-  } else {
-    modalContenido.innerHTML = "<h3>Datos ingresados:</h3>";
-    var etiquetas = {
-      nombre: "Nombre completo",
-      email: "Email",
-      contrasena: "Contraseña",
-      repetir: "Repetir contraseña",
-      edad: "Edad",
-      telefono: "Teléfono",
-      direccion: "Dirección",
-      ciudad: "Ciudad",
-      codigoPostal: "Código postal",
-      dni: "DNI"
-    };
-    campos.forEach(function(campo) {
-      var valor = document.getElementById(campo.id).value;
-      if (campo.id === "contrasena" || campo.id === "repetir") valor = "••••••••";
-      var p = document.createElement("p");
-      p.textContent = etiquetas[campo.id] + ": " + valor;
-      modalContenido.appendChild(p);
-    });
+    document.getElementById("modal").classList.add("visible");
+    return;
   }
 
-  document.getElementById("modal").classList.add("visible");
+  var datos = {
+    nombre:       document.getElementById("nombre").value,
+    email:        document.getElementById("email").value,
+    contrasena:   document.getElementById("contrasena").value,
+    edad:         document.getElementById("edad").value,
+    telefono:     document.getElementById("telefono").value,
+    direccion:    document.getElementById("direccion").value,
+    ciudad:       document.getElementById("ciudad").value,
+    codigoPostal: document.getElementById("codigoPostal").value,
+    dni:          document.getElementById("dni").value
+  };
+
+  var params = new URLSearchParams(datos);
+  var url = "https://jsonplaceholder.typicode.com/posts?" + params.toString();
+
+  fetch(url, { method: "POST" })
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error("Error " + response.status + ": " + response.statusText);
+      }
+      return response.json();
+    })
+    .then(function(respuesta) {
+      localStorage.setItem("suscripcion", JSON.stringify(datos));
+
+      var modalContenido = document.getElementById("modal-contenido");
+      modalContenido.innerHTML = "<h3>¡Suscripción exitosa!</h3>";
+
+      var etiquetas = {
+        nombre: "Nombre", email: "Email", contrasena: "Contraseña",
+        edad: "Edad", telefono: "Teléfono", direccion: "Dirección",
+        ciudad: "Ciudad", codigoPostal: "Código postal", dni: "DNI", id: "ID asignado"
+      };
+
+      Object.keys(respuesta).forEach(function(clave) {
+        var p = document.createElement("p");
+        var etiqueta = etiquetas[clave] || clave;
+        var valor = (clave === "contrasena") ? "••••••••" : respuesta[clave];
+        p.textContent = etiqueta + ": " + valor;
+        modalContenido.appendChild(p);
+      });
+
+      document.getElementById("modal").classList.add("visible");
+    })
+    .catch(function(error) {
+      var modalContenido = document.getElementById("modal-contenido");
+      modalContenido.innerHTML = "<h3>Error en el envío</h3>";
+      var p = document.createElement("p");
+      p.className = "error";
+      p.textContent = error.message;
+      modalContenido.appendChild(p);
+      document.getElementById("modal").classList.add("visible");
+    });
 });
 
 document.getElementById("modal-cerrar").addEventListener("click", function() {
   document.getElementById("modal").classList.remove("visible");
+});
+
+window.addEventListener("load", function() {
+  var guardado = localStorage.getItem("suscripcion");
+  if (!guardado) return;
+
+  var datos = JSON.parse(guardado);
+  var camposRellenar = ["nombre", "email", "edad", "telefono", "direccion", "ciudad", "codigoPostal", "dni"];
+
+  camposRellenar.forEach(function(id) {
+    if (datos[id]) {
+      document.getElementById(id).value = datos[id];
+    }
+  });
+
+  if (datos.nombre) {
+    tituloSaludo.textContent = "HOLA " + datos.nombre.trim().toUpperCase();
+  }
 });
 
 var inputNombre = document.getElementById("nombre");
